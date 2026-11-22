@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Physics - Maths</title>
+    </head>
+    <body>
+        <h1><u>Randomized Physics-Maths Questions</u></h1>
+        <p id="question-text">Loading...</p>
+        <div id="inputs" style="display: none;">
+            <input type="number" id="user-answer" placeholder="Enter your answer."><br>
+            <button id="submit-btn" onclick="check_answer()">Submit Answer</button>
+            <p id="js-output"></p>
+        </div>
+        <div id="btn-container" class="btn-container" style="display: none;">
+            <button id="again" onclick="rate_card('again')">Again</button>
+            <button id="hard" onclick="rate_card('hard')">Hard</button>
+            <button id="good" onclick="rate_card('good')">Good</button>
+            <button id="easy" onclick="rate_card('easy')">Easy</button>
+        </div>
+    </body>
+</html>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+<style>
+    h1 {
+        font-family: arial;
+        color: #231e7b;
+        text-align: center;
+    }
+
+    p {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    body {
+        background-image: linear-gradient(to bottom, #ffffff, #1c3068);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    #inputs {
+        background: none;          /* no background on the container */
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #inputs input,
+    #inputs button {
+        border-radius: 10px;       /* same radius on both so they match */
+        font-size: 18px;
+        padding: 10px 16px;
+        box-sizing: border-box;
+    }
+
+    #inputs input {
+        width: 260px;
+        border: 2px solid #231e7b;
+        outline: none;
+        margin-bottom: 12px;
+    }
+
+    #inputs input:focus {
+        border-color: #1c3068;
+        box-shadow: 0 0 0 3px rgba(35, 30, 123, 0.25);
+    }
+
+    #inputs button {
+        border: none;
+        background-color: #231e7b;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    #inputs button:hover {
+        background-color: #1c3068;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin: 20px auto;
+        padding: 15px 25px;
+        width: fit-content;
+        background: linear-gradient(to right, #a4273f, #05b202);
+        border-radius: 10px;
+    }
+
+    .btn-container button {
+        border-radius: 10px;
+        font-size: 18px;
+        padding: 10px 16px;
+        box-sizing: border-box;
+        border: none;
+        background-color: #231e7b;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .btn-container button:hover {
+        background-color: #1c3068;
+    }
+</style>
